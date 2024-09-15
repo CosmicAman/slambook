@@ -1,0 +1,394 @@
+/* Background Image */
+body {
+  background-image: url('./assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ensures the background image adjusts to different screen sizes */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Optional: Adding opacity or overlay */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Any other elements on the page will go below this background */
+.card {
+  z-index: 1; /* Ensure other elements are above the background */
+  position: relative;
+}
+
+/* You can add media queries for further adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+}
+
+/*button*/
+.button{
+  margin: 2px;
+  position: relative;
+  background-color: black;
+  border-radius: 10px;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  cursor:pointer;
+  user-select:none;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  
+}
+
+.button:hover {
+  transition-duration: 0.1s;
+  background-color: #3A3A3A;
+}
+
+.button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px rgb(31, 31, 31);
+}
+
+.button:active:after {
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.button:active {
+  top: 1px;
+}
+
+
+
+
+/* Card Styles */
+.card {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgba(68, 67, 67, 0.339);
+  border: 1px solid rgb(113, 108, 108);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(37, 37, 37);
+  padding: 20px;
+  margin: 10px;
+  max-width: 24%;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+
+.card:hover {
+  background-color: rgba(43, 44, 43, 0.743);
+  box-shadow: 8px 8px 8px rgb(47, 47, 47);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  animation: zoomIn 0.3s forwards ease-in-out;
+}
+
+/* Card Image Styles */
+.card .card-image {
+  max-width: 40%;
+  height: auto;
+  border: 2px solid rgba(0, 0, 0, 0.267);
+  border-radius: 20px;
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.669);
+}
+
+
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 0px 50px rgb(0, 115, 255);
+  }
+
+  30%{
+    box-shadow: 0px 0px 50px rgba(7, 172, 255, 0.911);
+  }
+
+  50%{
+    box-shadow: 0px 0px 50px rgba(5, 70, 249, 0.801);
+  }
+
+
+  75%{
+    box-shadow: 0px 0px 50px rgba(6, 97, 215, 0.591);
+  }
+
+  95%{
+    box-shadow: 0px 0px 50px rgba(13, 6, 215, 0.378);
+  }
+
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 50px rgba(13, 6, 215, 0.248);
+  }
+}
+
+/* Responsive Styles */
+
+/* For devices with width less than 1024px (tablets, small laptops) */
+@media screen and (max-width: 1024px) {
+  .card {
+    max-width: 30%; /* Increase card size for medium screens */
+  }
+
+  .card .card-image {
+    max-width: 50%; /* Make the image slightly larger */
+  }
+}
+
+/* For devices with width less than 768px (mobile phones, small tablets) */
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 30%; /* Cards take more space for mobile devices */
+  }
+
+  .card .card-image {
+    max-width: 60%; /* Make images larger for better mobile display */
+  }
+
+  .header {
+    font-size: 1.2rem; /* Adjust header font size */
+    padding: 15px; /* Reduce padding */
+  }
+}
+
+/* For devices with width less than 480px (small mobile phones) */
+@media screen and (max-width: 480px) {
+  .card {
+    max-width: 80%; /* Cards take full width on small screens */
+  }
+
+  .card .card-image {
+    max-width: 80%; /* Make image full width of the card */
+  }
+
+  .header {
+    font-size: 1rem; /* Further reduce the header font size */
+    padding: 10px; /* Adjust padding for smaller devices */
+  }
+}
+
+
+
+.Footer {
+  text-align: center;
+  font-size: medium;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: linear-gradient(rgb(198, 102, 198), rgb(53, 53, 195));
+  height: 30px; /* Adjust as needed */
+  line-height: 20px; /* Vertically center text */
+  width: auto;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px;
+}
+
+
+
+/* header */ 
+/* Background color */
+body {
+  background-color: #E4FFF7;
+}
+
+/* Keyframes for animation */
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* Styling for each span in the playful header */
+.playful span {
+  position: relative;
+  color: #5362F6;
+  text-shadow: 0.25px 0.25px #E485F8, 0.5px 0.5px #E485F8, 0.75px 0.75px #E485F8, 1px 1px #E485F8, 1.25px 1.25px #E485F8, 1.5px 1.5px #E485F8;
+  animation: scatter 1.75s infinite;
+}
+
+/* Styling for nth-child spans for color variation */
+.playful span:nth-child(2n) {
+  color: #ED625C;
+  text-shadow: 0.25px 0.25px #F2A063, 0.5px 0.5px #F2A063, 0.75px 0.75px #F2A063, 1px 1px #F2A063, 1.25px 1.25px #F2A063, 1.5px 1.5px #F2A063;
+  animation-delay: 0.3s;
+}
+
+.playful span:nth-child(3n) {
+  color: #FFD913;
+  text-shadow: 0.25px 0.25px #6EC0A9, 0.5px 0.5px #6EC0A9, 0.75px 0.75px #6EC0A9, 1px 1px #6EC0A9, 1.25px 1.25px #6EC0A9, 1.5px 1.5px #6EC0A9;
+  animation-delay: 0.15s;
+}
+
+.playful span:nth-child(5n) {
+  color: #555BFF;
+  text-shadow: 0.25px 0.25px #E485F8, 0.5px 0.5px #E485F8, 0.75px 0.75px #E485F8, 1px 1px #E485F8, 1.25px 1.25px #E485F8, 1.5px 1.5px #E485F8;
+  animation-delay: 0.4s;
+}
+
+.playful span:nth-child(7n), .playful span:nth-child(11n) {
+  color: #FF9C55;
+  text-shadow: 0.25px 0.25px #FF5555, 0.5px 0.5px #FF5555, 0.75px 0.75px #FF5555, 1px 1px #FF5555, 1.25px 1.25px #FF5555, 1.5px 1.5px #FF5555;
+  animation-delay: 0.25s;
+}
+
+/* Header general styling */
+h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'Archivo Black', 'Archivo', sans-serif;
+  font-weight: normal;
+  display: block;
+  width: auto;
+  max-width: auto;
+  height: auto;
+  text-align: center;
+  margin: 0;
+}
+
+/* Box */
+
+* {
+	box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+body {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	min-height: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+p {
+	margin: 0;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+.wrapper {
+	min-width: min(40rem, 100%);
+}
+
+.box {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+	font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+	border: 1.5px solid;
+	padding: 15px;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+.footer-link {
+  color: rgb(255, 225, 0);
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
