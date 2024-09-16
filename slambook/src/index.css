@@ -1,25 +1,59 @@
-/* Background Image */
+/* Default Background Styling */
 body {
   background-image: url('./assets/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  
+  min-height: 100vh; /* Ensure the body covers the viewport */
 }
 
-/* Ensures the background image adjusts to different screen sizes */
+/* Ensure body has a full viewport height */
 html, body {
-  height: 100%;
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
+
+/* Pseudo element for background handling */
+body::before {
+  content: '';
+  position: absolute; /* Change from fixed to absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Keeps it behind content */
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+  body::before {
+    height: 100vh; /* Use 100vh on mobile devices */
+  }
+}
+
+
+/* Fix for mobile devices */
+@media (max-width: 768px) {
+  body::before {
+    height: calc(100vh - 3px); /* Subtracts a small amount to avoid white space at the bottom */
+  }
+}
+
+/* Full viewport height */
+.full-height {
+  min-height: 100vh; /* Ensures full viewport height */
+}
+
 
 /* Optional: Adding opacity or overlay */
 .overlay {
@@ -136,7 +170,7 @@ html, body {
 @keyframes zoomIn {
   0% {
     transform: scale(1);
-    box-shadow: 0px 0px 50px rgb(0, 115, 255);
+    box-shadow: 0px 0px 50px rgb(217, 0, 255);
   }
 
   30%{
@@ -144,7 +178,7 @@ html, body {
   }
 
   50%{
-    box-shadow: 0px 0px 50px rgba(5, 70, 249, 0.801);
+    box-shadow: 0px 0px 50px rgba(220, 5, 249, 0.801);
   }
 
 
@@ -153,12 +187,12 @@ html, body {
   }
 
   95%{
-    box-shadow: 0px 0px 50px rgba(13, 6, 215, 0.378);
+    box-shadow: 0px 0px 50px rgba(205, 6, 215, 0.378);
   }
 
   100% {
     transform: scale(1.05);
-    box-shadow: 0px 0px 50px rgba(13, 6, 215, 0.248);
+    box-shadow: 0px 0px 50px rgba(215, 6, 215, 0.248);
   }
 }
 
@@ -209,19 +243,6 @@ html, body {
 
 
 
-.Footer {
-  text-align: center;
-  font-size: medium;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-image: linear-gradient(rgb(198, 102, 198), rgb(53, 53, 195));
-  height: 30px; /* Adjust as needed */
-  line-height: 20px; /* Vertically center text */
-  width: auto;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  padding: 10px;
-}
 
 
 
@@ -388,6 +409,21 @@ p {
 		--gradX: 50%;
 		--gradY: 0%;
 	}
+}
+
+
+.Footer {
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: linear-gradient(rgb(198, 102, 198), rgb(53, 53, 195));
+  height: 30px; /* Adjust as needed */
+  line-height: 20px; /* Vertically center text */
+  width: auto;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px;
 }
 
 .footer-link {
