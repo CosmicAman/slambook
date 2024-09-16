@@ -37,12 +37,13 @@ function FriendshipMeter() {
   };
 
   return (
+    <>
     <div className='container'>
       <h2>Friendship Meter</h2>
       
       <div>
         <label className='label'>Select Person: </label>
-        <select value={person2} onChange={handlePerson2Change}>
+        <select className='drop' value={person2} onChange={handlePerson2Change}>
           <option value="">--Choose--</option>
           {Object.keys(personData).map((personKey) => (
             <option key={personKey} value={personKey}>
@@ -66,10 +67,18 @@ function FriendshipMeter() {
           <h3>Friendship Score</h3>
           <p className='score'>{personData[person1].name} and {personData[person2].name}'s friendship score is: {score}/10</p>
         </div>
-      )}
-
+        )}
       {person1 === person2 && person1 !== "" && <p>Please choose a different persons!</p>}
+       
+
+
+
     </div>
+
+
+   
+
+    </>
   );
 }
 

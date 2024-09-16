@@ -33,8 +33,8 @@
   padding: 100px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px 10px rgba(30, 30, 30, 0.598);
-  margin-bottom: 68%;
-  margin-top: 50%;
+  margin-bottom: 70%;
+  margin-top: 60%;
   max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
 }
 
@@ -45,7 +45,15 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   word-wrap: break-word; /* Ensure long text wraps properly */
 }
-
+.drop {
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  background-color: #0000004d;
+  color: #ffffff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  word-wrap: break-word;
+}
 .f-button {
   font-weight: bold;
   background-color: #00000059;

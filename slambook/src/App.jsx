@@ -12,6 +12,7 @@ function App() {
     <Router>
       <Header/>
       <Routes>
+        
         <Route path="/" element={<Card/>}/>
         <Route path="/person/:name" element={<Person/>}/>
         <Route path="/friendship-meter" element={<FriendshipMeter />} />

@@ -4,10 +4,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  
 }
 
 /* Ensures the background image adjusts to different screen sizes */
@@ -15,6 +17,8 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Optional: Adding opacity or overlay */
