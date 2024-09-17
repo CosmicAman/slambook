@@ -30,7 +30,7 @@ function Card() {
           <img className="card-image" src={person.img} alt={person.alt} />
           <h2 className='h2'>{person.name}</h2>
           <button className='button'onClick={() => navigate(`/person/${person.name.toLowerCase()}`)}>Know {person.name}</button>
-          <button className='button' onClick={() => navigate(`/friendship-meter?person1=${person.name.toLowerCase()}`)}>Friendship Meter</button>
+          <button className='button' onClick={() => navigate(`/friendship-meter?person1=${person.name.toLowerCase()}`)}>FriendZoner</button>
         </div>
       ))}
     </>
